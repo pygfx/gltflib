@@ -1,20 +1,36 @@
-from dataclasses import dataclass
-from dataclasses_json import dataclass_json
-from typing import Optional
+import copy
+import json
 
-
-@dataclass_json
-@dataclass
+# Attributes is a special case, it can have custom attrs
 class Attributes:
-    """
-    Helper type for describing the attributes of a primitive. Each property corresponds to mesh attribute semantic and
-    each value is the index of the accessor containing the attribute's data.
-    """
-    POSITION: Optional[int] = None
-    NORMAL: Optional[int] = None
-    TANGENT: Optional[int] = None
-    TEXCOORD_0: Optional[int] = None
-    TEXCOORD_1: Optional[int] = None
-    COLOR_0: Optional[int] = None
-    JOINTS_0: Optional[int] = None
-    WEIGHTS_0: Optional[int] = None
+    def __init__(
+        self,
+        POSITION=None,
+        NORMAL=None,
+        TANGENT=None,
+        TEXCOORD_0=None,
+        TEXCOORD_1=None,
+        COLOR_0: int = None,
+        JOINTS_0: int = None,
+        WEIGHTS_0=None,
+        *args,
+        **kwargs
+    ):
+        self.POSITION = POSITION
+        self.NORMAL = NORMAL
+        self.TANGENT = TANGENT
+        self.TEXCOORD_0 = TEXCOORD_0
+        self.TEXCOORD_1 = TEXCOORD_1
+        self.COLOR_0 = COLOR_0
+        self.JOINTS_0 = JOINTS_0
+        self.WEIGHTS_0 = WEIGHTS_0
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def __repr__(self):
+        return self.__class__.__qualname__ + '(' + ', '.join([f"{f}={v}" for f, v in self.__dict__.items()]) + ')'
+
+    def to_json(self, *args, **kwargs):
+        data = copy.deepcopy(self.__dict__)
+        return json.dumps(data)
+
