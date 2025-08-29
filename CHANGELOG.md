@@ -1,5 +1,9 @@
 # Changelog
 
+## Upcoming
+
+- Bumped minimal required Python version to 3.10
+
 ## [1.0.13](https://github.com/sergkr/gltflib/releases/tag/v1.0.13) - 2022-08-22
 
 ### Added

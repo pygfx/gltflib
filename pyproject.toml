@@ -14,7 +14,7 @@ authors = [
     { name = "Pan Xinmiao" },
 ]
 keywords = ["graphics", "gltf", "3d"]
-requires-python = ">= 3.7"
+requires-python = ">= 3.10"
 dependencies = ["dataclasses-json>=0.4.5"]
 
 [project.optional-dependencies]
