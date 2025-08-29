@@ -1,6 +1,6 @@
 # gltflib
 
-Library for parsing, creating, and converting glTF 2.0 files in Python 3.6+.
+Library for parsing, creating, and converting glTF 2.0 files in Python.
 
 ## Overview
 
