@@ -542,12 +542,10 @@ buffer will be removed entirely as well.
 ## Credits
 
 This project is based on the `pygltflib` library by
-[dodgyville](https://gitlab.com/dodgyville) available here:
-
-https://gitlab.com/dodgyville/pygltflib
+[Luke Miller](https://gitlab.com/dodgyville): https://gitlab.com/dodgyville/pygltflib
 
 Specifically, this project is based on a much earlier version of `pygltflib` at a
-time when it didn't seem to be actively maintained. I used that library as a
-starting point and added some features I needed for my own work. Since then, the
-original `pygltflib` project has been revived, but our implementations have
+time when it didn't seem to be actively maintained. Lukas Shawford used that library as a
+starting point and added some features he needed for his own work. Since then, the
+original `pygltflib` project has been revived, but this implementation has
 diverged significantly. So now there are two :-)

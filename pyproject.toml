@@ -1,0 +1,46 @@
+# ===== Project info
+
+[project]
+dynamic = ["version"]
+name = "gltflib"
+description = "Library for parsing, creating, and converting glTF 2.0 files"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Luke Miller" },
+    { name = "Sergey Krilov" },
+    { name = "Lukas Shawford" },
+    { name = "Almar Klein" },
+    { name = "Pan Xinmiao" },
+]
+keywords = ["graphics", "gltf", "3d"]
+requires-python = ">= 3.7"
+dependencies = ["dataclasses-json>=0.4.5"]
+
+[project.optional-dependencies]
+lint = ["ruff"]
+tests = ["pytest"]
+dev = ["pygfx[lint,tests]"]
+
+[project.urls]
+Homepage = "https://github.com/pygfx/gltflib"
+Documentation = "https://github.com/pygfx/gltflib"
+Repository = "https://github.com/pygfx/gltflib"
+
+# ===== Building
+
+# Flit is great solution for simple pure-Python projects.
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+# ===== Tooling
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "N", "B", "RUF", "TC"]
+ignore = [
+    "E501", # Line too long
+]
